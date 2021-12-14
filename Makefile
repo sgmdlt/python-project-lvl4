@@ -1,7 +1,10 @@
 MANAGE := poetry run python manage.py
 
-install:
+install: .env
 	@poetry install
+
+.env:
+	@test ! -f .env && cp .env.example .env
 
 lint:
 	@poetry run flake8
