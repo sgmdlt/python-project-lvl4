@@ -19,7 +19,7 @@ check: test lint
 
 
 dev-run:
-	@$(MANAGE) runserver --nostatic
+	@$(MANAGE) runserver
 
 make-migration:
 	@$(MANAGE) makemigrations
