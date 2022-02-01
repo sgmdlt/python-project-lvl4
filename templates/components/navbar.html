@@ -1,0 +1,13 @@
+{% load i18n static %}
+<nav class="nav nav-masthead container text-monospace mb-3 mt-3">
+        <div class="row">
+            <a class="masthead-brand col h3 text-muted" href="{% url 'home' %}">{{ settings.APP_NAME }}</h1>
+                
+            <ul class="col list-inline">
+              <li class="list-inline-item"><a class="nav-link" href="{% url 'users:home' %}">{% translate "Users" %}</a></li>
+              <li class="list-inline-item"><a class="nav-link" href="#">{% translate "Sign in" %}</a></li>
+              <li class="list-inline-item"><a class="nav-link" href="#">{% translate "Register" %}</a></li>
+            </ul>
+        </div>
+</nav>
+    
