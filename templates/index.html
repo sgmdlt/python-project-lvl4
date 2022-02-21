@@ -1,0 +1,50 @@
+{% load i18n static bootstrap4 %}
+{% get_current_language as LANGUAGE_CODE %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    {% block meta %}{% include "components/meta.html" %}{% endblock %}
+    {% bootstrap_css %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    
+    <title>{% block title %}{{ settings.APP_NAME }}{% endblock %}</title>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+</head>
+    
+<body>
+    <div class="cover-container d-flex w-100 h-50 p-3 mx-auto flex-column">
+  <header class="masthead mb-3 text-monospace">
+    {% include 'components/navbar.html' %}
+  </header>
+
+  <main role="main" class="cover mb-3">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      {% block footer %}{% endblock %}
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
