@@ -3,5 +3,5 @@ from users import views
 
 app_name = 'users'
 urlpatterns = [
-    path('', views.UsersView.as_view(), name='home'),
+    path('', views.UsersView.as_view(), name='users_home'),
 ]

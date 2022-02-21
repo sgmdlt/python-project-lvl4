@@ -1,12 +1,12 @@
 from django.views.generic import ListView
-
-from .models import User
+from users.models import User
 
 
 class UsersView(ListView):
 
-    template = 'users.html'
-    context_object_name = 'users'
+    context_object_name = 'users_list'
+    template_name = 'users/users.html'
+    model = User
 
     def get_queryset(self):
-        return User.objects.order_by('-created_at')
+        return User.objects.all().order_by('-created_at')
