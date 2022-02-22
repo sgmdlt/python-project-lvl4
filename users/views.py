@@ -8,5 +8,5 @@ class UsersView(ListView):
     template_name = 'users/users.html'
     model = User
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs):  # noqa:WPS612
         return super().get_context_data(**kwargs)
