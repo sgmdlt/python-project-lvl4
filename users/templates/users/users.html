@@ -1,13 +1,11 @@
 {% extends "index.html" %}
 
-{% load i18n static %}
+{% load i18n%}
 
 {% block content %}
     <div class="row">
         <div class="col">
-    {% if users_list %}
-    
-    <table class="table table-dark table-hover table-responsive-md">
+        <table class="table table-dark table-hover table-responsive-md">
         <thead>
           <tr>
             <th>ID</th>
@@ -25,13 +23,12 @@
             <td>{{ user }}</td>
             <td>{{ user.time }}</td>
             </tr>
+        {% empty %}
+            <p>Nothing here =(</p>
         {% endfor %}
         </tbody>
     </table>
 
-    {% else %}
-        <p class="h3">{% translate "No users here" %}</p>
-    {% endif %} 
-        </div>
+    </div>
     </div>
 {% endblock %}
