@@ -80,8 +80,8 @@ DATABASES = {
 
 CONN_MAX_AGE = 500
 
-if os.getenv('DATABASE_URL'):
-    DATABASES['default'] = dj_database_url.config(conn_max_age=CONN_MAX_AGE)
+db_from_env = dj_database_url.config(conn_max_age=CONN_MAX_AGE)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
