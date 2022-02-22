@@ -27,6 +27,9 @@ make-migration:
 migrate: make-migration
 	@$(MANAGE) migrate
 
+db-clean:
+	@rm db.sqlite3 || true
+
 repl:
 	@$(MANAGE) shell_plus  --ipython
 
