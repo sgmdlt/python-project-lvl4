@@ -8,5 +8,6 @@ class UsersView(ListView):
     template_name = 'users/users.html'
     model = User
 
-    def get_queryset(self):
-        return User.objects.all().order_by('-created_at')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
