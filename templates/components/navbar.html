@@ -5,9 +5,9 @@
   <a class="col masthead-brand h5 text-center text-md-left text-muted" href="{% url 'home' %}">{{ settings.APP_NAME }}</a>
     
     <ul class="col nav nav-masthead list-inline justify-content-center justify-content-md-end">
-      <li class="list-inline-item mx-2"><a class="nav-link active" href="{% url 'users:users_home' %}">{% translate "Users" %}</a></li>
+      <li class="list-inline-item mx-2"><a class="nav-link" href="{% url 'users:home' %}">{% translate "Users" %}</a></li>
       <li class="list-inline-item mx-2"><a class="nav-link" href="#">{% translate "Sign in" %}</a></li>
-      <li class="list-inline-item mx-2"><a class="nav-link" href="#">{% translate "Register" %}</a></li>
+      <li class="list-inline-item mx-2"><a class="nav-link" href="{% url 'users:create' %}">{% translate "Register" %}</a></li>
     </ul>
 
 </nav>

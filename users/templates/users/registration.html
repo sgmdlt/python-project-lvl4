@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% load i18n%}
+{% block content %}
+
+<div class="row">
+<div class="col">
+<h1 class="my-4">{% translate "Register" %}</h1>
+    
+<form method="post">  
+    {% csrf_token %}
+    <ul>
+    {{ form.as_ul }}
+    </ul>
+    <button class="btn btn-primary">{% translate "Register" %}</button>    
+</form>
+
+</div>
+</div>
+{% endblock %}
+
