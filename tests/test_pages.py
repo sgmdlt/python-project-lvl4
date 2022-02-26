@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from users.models import User
+from users.models import CustomUser
 
 
 def test_home_page(client):
@@ -11,7 +11,7 @@ def test_home_page(client):
 
 @pytest.mark.django_db
 def test_no_users_page(client):
-   url = reverse('users:users_home')
+   url = reverse('users:home')
    response = client.get(url)
    
    assert list(response.context['users_list']) == []
@@ -20,12 +20,12 @@ def test_no_users_page(client):
 
 @pytest.mark.django_db
 def test_users_page(client):
-   user = User.objects.create(
+   user = CustomUser.objects.create(
       first_name='Jack',
       last_name='Alltrades',
       username='jack4alltrades',
       )
-   url = reverse('users:users_home')
+   url = reverse('users:home')
    response = client.get(url)
    
    assert list(response.context['users_list']) == [user]
