@@ -18,7 +18,7 @@ test-coverage:
 check: test lint
 
 
-dev-run:
+dev-run: migrate
 	@$(MANAGE) runserver
 
 make-migration:
