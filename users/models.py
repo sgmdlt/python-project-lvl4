@@ -1,13 +1,16 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
+MAX_LENGTH = 255
+
+
 class CustomUser(AbstractUser):
-    first_name = models.CharField(max_length=255)
-    username = models.CharField(max_length=255, unique=True)
-    
-    USERNAME_FIELD = 'username'
+    first_name = models.CharField(max_length=MAX_LENGTH)
+    username = models.CharField(max_length=MAX_LENGTH, unique=True)
+
+    USERNAME_FIELD = 'username'  # noqa:WPS115 upper-case constant in a class
 
     class Meta(object):
         verbose_name = _("User")
