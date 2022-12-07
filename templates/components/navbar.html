@@ -1,13 +1,24 @@
 {% load i18n static %}
 
-<nav class="inner row row-cols-1 row-cols-md-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
   
-  <a class="col masthead-brand h5 text-center text-md-left text-muted" href="{% url 'home' %}">{{ settings.APP_NAME }}</a>
+  <a class="navbar-brand" href="{% url 'index' %}">Task Manager</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
     
-    <ul class="col nav nav-masthead list-inline justify-content-center justify-content-md-end">
-      <li class="list-inline-item mx-2"><a class="nav-link" href="{% url 'users:home' %}">{% translate "Users" %}</a></li>
-      <li class="list-inline-item mx-2"><a class="nav-link" href="#">{% translate "Sign in" %}</a></li>
-      <li class="list-inline-item mx-2"><a class="nav-link" href="{% url 'users:create' %}">{% translate "Register" %}</a></li>
+  <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="{% url 'users:index' %}">{% translate "Users" %}</a></li>
     </ul>
-
+  
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">{% translate "Sign in" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'users:create' %}">{% translate "Register" %}</a>
+      </li>
+    </ul>
+  </div>
 </nav>

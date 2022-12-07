@@ -1,0 +1,27 @@
+{% extends "index.html" %} 
+{% load i18n%} 
+{% block content %}
+<h1 class="display-4 fw-bold mt-4">{% translate "Register" %}</h1>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+      <div class="card shadow-sm">
+          <div class="card-body row p-5">
+              <div
+              class="col-12 col-md-6 d-flex align-items-center justify-content-center"
+              >
+              <img class="rounded-circle" src="/assets/avatar.jpg" />
+            </div>
+            <div class="col-12 col-md-6 mt-3 mt-mb-0">
+                <form method="post">
+                    {% csrf_token %}
+                    <ul>
+              {{ form.as_ul }}
+            </ul>
+            <button class="btn btn-primary">{% translate "Register" %}</button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

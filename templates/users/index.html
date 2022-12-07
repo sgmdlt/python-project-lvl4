@@ -1,11 +1,11 @@
 {% extends "index.html" %}
-
 {% load i18n%}
 
 {% block content %}
-    <div class="row">
-        <div class="col">
-        <table class="table table-dark table-hover table-responsive-md">
+    <h1 class="display-4 fw-bold mt-4">{% translate "Users" %}</h1>
+
+    <div class="table-responsive">
+        <table class="table table-borderless table-striped mt-5 bg-white">
         <thead>
           <tr>
             <th>ID</th>
@@ -28,7 +28,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    </div>
     </div>
 {% endblock %}
