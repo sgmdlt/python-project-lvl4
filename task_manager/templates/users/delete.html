@@ -1,0 +1,23 @@
+{% extends "index.html" %} 
+{% load i18n %}
+{% block content %}
+<h1 class="display-4 fw-bold mt-4">{% translate "Are you really want to delete user?" %}</h1>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
+      <div class="card shadow-sm">
+          <div class="card-body row p-5">
+              <div
+              class="col-12 col-md-8 d-flex align-items-center justify-content-center"
+              >
+            </div>
+            <div class="col-12 col-md-8 mt-3 mt-mb-0">
+                <form action="{% url 'users:delete' pk=user.id %}" method="post">
+                    {% csrf_token %}
+            <button class="btn btn-primary">{% translate "Delete" %}</button>
+                </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
