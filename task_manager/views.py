@@ -1,12 +1,9 @@
-from django.views.generic.base import TemplateView
-
-from django.contrib.auth.views import (
-    LoginView as DjangoLoginView,
-    LogoutView as DjangoLogoutView,
-)
+from django.contrib.auth.views import LoginView as DjangoLoginView
+from django.contrib.auth.views import LogoutView as DjangoLogoutView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls.base import reverse_lazy
 from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic.base import TemplateView
 
 
 class IndexView(TemplateView):

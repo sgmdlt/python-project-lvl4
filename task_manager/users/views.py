@@ -1,11 +1,10 @@
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 from task_manager.users.forms import UserForm
 from task_manager.users.models import User
-from django.utils.translation import gettext as _
-from django.contrib.messages.views import SuccessMessageMixin
-
 
 from .mixins import UserHasPermissionMixin
 
