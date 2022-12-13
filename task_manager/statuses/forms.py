@@ -6,6 +6,6 @@ from .models import Status
 class StatusForm(ModelForm):
     """Site user creation form."""
 
-    class Meta(ModelForm.Meta):
+    class Meta:  # noqa: WPS306
         model = Status
         fields = ["name"]
