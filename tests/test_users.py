@@ -1,11 +1,9 @@
 import json
 
 import pytest
-from conftest import get_fixture
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from django.urls import reverse
-from task_manager.users.models import User
 
 
 def test_home_page(client):
