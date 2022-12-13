@@ -8,11 +8,6 @@ from django.urls import reverse
 from task_manager.users.models import User
 
 
-@pytest.fixture
-def test_data():
-    return json.loads(open(get_fixture("test_data.json")).read())
-
-
 def test_home_page(client):
     url = reverse("index")
     response = client.get(url)

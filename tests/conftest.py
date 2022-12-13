@@ -27,3 +27,9 @@ def get_fixture(filename):
 def django_db_setup(django_db_setup, django_db_blocker):
     with django_db_blocker.unblock():
         call_command("loaddata", get_fixture("users.json"))
+        call_command("loaddata", get_fixture("statuses.json"))
+
+
+@pytest.fixture
+def test_data(scope="session"):
+    return json.loads(open(get_fixture("test_data.json")).read())
