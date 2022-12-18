@@ -13,9 +13,9 @@ jobs:
         # if  you want to test yr app on several versions of Python, just add them to list
         python-version: [3.8]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
         # make depends on poetry
@@ -28,7 +28,7 @@ jobs:
         env:
           SECRET_KEY: secret
       - name: Publish code coverage report
-        uses: paambaati/codeclimate-action@v2.7.5
+        uses: paambaati/codeclimate-action@v3.2.0
         env:
           SECRET_KEY: secret
           CC_TEST_REPORTER_ID: ${{secrets.TEST_COVERAGE}}
