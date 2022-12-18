@@ -4,8 +4,9 @@
 {% block content %}
     <h1 class="display-4 fw-bold mt-4">{% translate "Tasks" %}</h1>
     <a class="nav-link" href="{% url 'tasks:create' %}">{% translate "Create task" %}</a>
+    {% include './filter.html' %}
     <div class="table-responsive">
-        <table class="table table-borderless table-striped mt-5 bg-white">
+      <table class="table table-borderless table-striped mt-5 bg-white">
         <thead>
           <tr>
             <th>ID</th>

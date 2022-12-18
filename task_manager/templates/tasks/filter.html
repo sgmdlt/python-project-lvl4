@@ -1,0 +1,7 @@
+{% load i18n %}
+{% load bootstrap4 %}
+
+<form method="get">
+    {{ filter.form.as_div }}
+    <input class="btn btn-primary" type="submit" value="{% translate 'Show' %}">
+</form>
