@@ -47,6 +47,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "rollbar.contrib.django.middleware.RollbarNotifierMiddleware",
 ]
 
 ROOT_URLCONF = "task_manager.urls"
@@ -140,3 +141,9 @@ APP_NAME = "task_manager"
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, "locale", "ru"),
 ]
+
+ROLLBAR = {
+    "access_token": os.getenv("ROLLBAR_TOKEN"),
+    "environment": "development" if DEBUG else "production",
+    "root": BASE_DIR,
+}

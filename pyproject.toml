@@ -15,6 +15,7 @@ django-extensions = "^3.1.5"
 whitenoise = "^5.3.0"
 django-bootstrap4 = "^21.2"
 django-filter = "^22.1"
+rollbar = "^0.16.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest-django = "^4.5.2"
