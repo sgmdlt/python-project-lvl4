@@ -2,6 +2,21 @@ import pytest
 from django.urls import reverse
 from task_manager.statuses.models import Status
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import ProtectedError
+from django.core.management import call_command
+from conftest import get_fixture
+
+
+@pytest.fixture(scope="module")
+def django_db_setup(django_db_setup, django_db_blocker, request):
+    def clear_db():
+        with django_db_blocker.unblock():
+            call_command("flush", "--noinput")
+
+    request.addfinalizer(clear_db)
+    with django_db_blocker.unblock():
+        call_command("loaddata", get_fixture("users.json"))
+        call_command("loaddata", get_fixture("statuses.json"))
 
 
 @pytest.fixture()

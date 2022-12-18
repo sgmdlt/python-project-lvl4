@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-from django.core.management import call_command
 import pytest
 
 
@@ -21,13 +20,6 @@ def whitenoise_autorefresh(settings):
 def get_fixture(filename):
     current_dir = Path(__file__).absolute().parent
     return current_dir / "fixtures" / filename
-
-
-@pytest.fixture(scope="session")
-def django_db_setup(django_db_setup, django_db_blocker):
-    with django_db_blocker.unblock():
-        call_command("loaddata", get_fixture("users.json"))
-        call_command("loaddata", get_fixture("statuses.json"))
 
 
 @pytest.fixture

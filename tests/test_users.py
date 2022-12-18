@@ -4,6 +4,19 @@ import pytest
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from django.urls import reverse
+from django.core.management import call_command
+from conftest import get_fixture
+
+
+@pytest.fixture(scope="module")
+def django_db_setup(django_db_setup, django_db_blocker, request):
+    def clear_db():
+        with django_db_blocker.unblock():
+            call_command("flush", "--noinput")
+
+    request.addfinalizer(clear_db)
+    with django_db_blocker.unblock():
+        call_command("loaddata", get_fixture("users.json"))
 
 
 def test_home_page(client):
@@ -68,6 +81,7 @@ def test_delete_user(client, test_data):
         password=exist_user["password"],
     )
     user = get_user_model().objects.get(username=exist_user["username"])
+    print(user)
     url = reverse("users:delete", args=[user.pk])
     client.post(url)
     with pytest.raises(ObjectDoesNotExist):
