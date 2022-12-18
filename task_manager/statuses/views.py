@@ -1,5 +1,8 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models import ProtectedError
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -35,3 +38,14 @@ class StatusDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy("statuses:index")
     success_message = _("Status successfully deleted")
     template_name = "statuses/delete.html"
+
+    def form_valid(self, form):
+        success_url = self.get_success_url()
+        try:
+            self.object.delete()
+        except ProtectedError:
+            messages.error(
+                self.request,
+                _("Status is used by task"),
+            )
+        return HttpResponseRedirect(success_url)
