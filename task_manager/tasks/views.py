@@ -4,16 +4,17 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from django.views.generic.list import ListView
+from django_filters.views import FilterView
 
 from .forms import TaskForm
 from .mixins import CheckTaskCreator
 from .models import Task
 
 
-class IndexView(LoginRequiredMixin, ListView):
+class IndexView(LoginRequiredMixin, FilterView):
     template_name = "tasks/index.html"
     model = Task
+    fields = ["status", "executor"]
 
 
 class TaskDetailView(LoginRequiredMixin, DetailView):

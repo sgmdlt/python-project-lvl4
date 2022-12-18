@@ -8,4 +8,4 @@ class TaskForm(ModelForm):
 
     class Meta:  # noqa: WPS306
         model = Task
-        fields = ["name", "description", "status", "executor"]
+        fields = ["name", "description", "status", "executor", "labels"]
