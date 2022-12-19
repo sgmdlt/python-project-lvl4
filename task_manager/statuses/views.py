@@ -33,10 +33,9 @@ class StatusUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = _("Status successfully updated")
 
 
-class StatusDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+class StatusDeleteView(LoginRequiredMixin, DeleteView):
     model = Status
     success_url = reverse_lazy("statuses:index")
-    success_message = _("Status successfully deleted")
     template_name = "statuses/delete.html"
 
     def form_valid(self, form):
@@ -47,5 +46,10 @@ class StatusDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
             messages.error(
                 self.request,
                 _("Status is used by task"),
+            )
+        else:
+            messages.success(
+                self.request,
+                _("Status successfully deleted"),
             )
         return HttpResponseRedirect(success_url)

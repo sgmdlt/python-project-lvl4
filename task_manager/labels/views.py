@@ -36,7 +36,6 @@ class LabelUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class LabelDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Label
     success_url = reverse_lazy("labels:index")
-    success_message = _("Label successfully deleted")
     template_name = "labels/delete.html"
 
     def form_valid(self, form):
@@ -47,5 +46,10 @@ class LabelDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
             messages.error(
                 self.request,
                 _("Label is used by task"),
+            )
+        else:
+            messages.success(
+                self.request,
+                _("Label successfully deleted"),
             )
         return HttpResponseRedirect(success_url)
