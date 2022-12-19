@@ -6,6 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django_filters.views import FilterView
 
+from .filters import TaskFilter
 from .forms import TaskForm
 from .mixins import CheckTaskCreator
 from .models import Task
@@ -14,7 +15,7 @@ from .models import Task
 class IndexView(LoginRequiredMixin, FilterView):
     template_name = "tasks/index.html"
     model = Task
-    fields = ["status", "executor"]
+    filterset_class = TaskFilter
 
 
 class TaskDetailView(LoginRequiredMixin, DetailView):
