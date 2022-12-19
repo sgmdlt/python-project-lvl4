@@ -1,6 +1,7 @@
 import django_filters
 from django.utils.translation import gettext as _
 from task_manager.labels.models import Label
+from django.forms import CheckboxInput
 
 from .models import Task
 
@@ -10,6 +11,7 @@ class TaskFilter(django_filters.FilterSet):
         field_name="creator",
         method="get_self_tasks",
         label=_("Only own tasks"),
+        widget=CheckboxInput,
     )
     label = django_filters.ModelChoiceFilter(
         field_name="labels",
