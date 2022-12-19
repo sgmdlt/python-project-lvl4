@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.views import LoginView as DjangoLoginView
 from django.contrib.auth.views import LogoutView as DjangoLogoutView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -19,6 +20,9 @@ class LoginView(SuccessMessageMixin, DjangoLoginView):
         return reverse_lazy("index")
 
 
-class LogoutView(SuccessMessageMixin, DjangoLogoutView):
-    success_message = _("You are logged out")
+class LogoutView(DjangoLogoutView):
     next_page = reverse_lazy("index")
+
+    def dispatch(self, request, *args, **kwargs):
+        messages.info(request, _("You are logged out"))
+        return super().dispatch(request, *args, **kwargs)
