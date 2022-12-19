@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-19 19:16+0400\n"
+"POT-Creation-Date: 2022-12-19 19:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,13 +40,13 @@ msgstr "Метка успешно создана"
 msgid "Label successfully updated"
 msgstr "Метка успешно изменена"
 
-#: task_manager/labels/views.py:39
-msgid "Label successfully deleted"
-msgstr "Метка успешно удалена"
-
-#: task_manager/labels/views.py:49
+#: task_manager/labels/views.py:48
 msgid "Label is used by task"
 msgstr "Метка используется задачей"
+
+#: task_manager/labels/views.py:53
+msgid "Label successfully deleted"
+msgstr "Метка успешно удалена"
 
 #: task_manager/statuses/views.py:25
 msgid "Status successfully created"
@@ -56,23 +56,21 @@ msgstr "Статус успешно создан"
 msgid "Status successfully updated"
 msgstr "Статус успешно изменён"
 
-#: task_manager/statuses/views.py:39
-msgid "Status successfully deleted"
-msgstr "Статус успешно удалён"
-
-#: task_manager/statuses/views.py:49
+#: task_manager/statuses/views.py:48
 msgid "Status is used by task"
 msgstr "Статус используется задачей"
+
+#: task_manager/statuses/views.py:53
+msgid "Status successfully deleted"
+msgstr "Статус успешно удалён"
 
 #: task_manager/tasks/filters.py:12
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
 #: task_manager/tasks/filters.py:16
-#, fuzzy
-#| msgid "Labels"
 msgid "Label"
-msgstr "Метки"
+msgstr "Метка"
 
 #: task_manager/tasks/mixins.py:18
 msgid "Task can be deleted only by its author"
@@ -96,15 +94,11 @@ msgstr "Статус"
 msgid "creator"
 msgstr "Создать"
 
-#: task_manager/tasks/models.py:27
-#, fuzzy
-#| msgid "Executor"
+#: task_manager/tasks/models.py:27 task_manager/templates/tasks/index.html:16
 msgid "executor"
 msgstr "Исполнитель"
 
 #: task_manager/tasks/models.py:34
-#, fuzzy
-#| msgid "Labels"
 msgid "labels"
 msgstr "Метки"
 
@@ -272,10 +266,6 @@ msgstr "Статус"
 #: task_manager/templates/tasks/index.html:15
 msgid "Author"
 msgstr "Автор"
-
-#: task_manager/templates/tasks/index.html:16
-msgid "Executor"
-msgstr "Исполнитель"
 
 #: task_manager/templates/tasks/update.html:6
 #, fuzzy
