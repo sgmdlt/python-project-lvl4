@@ -2,7 +2,6 @@ import pytest
 from django.urls import reverse
 from task_manager.statuses.models import Status
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models import ProtectedError
 from django.core.management import call_command
 from conftest import get_fixture
 
