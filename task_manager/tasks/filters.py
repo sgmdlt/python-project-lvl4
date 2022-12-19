@@ -1,8 +1,8 @@
 import django_filters
 from django.utils.translation import gettext as _
+from task_manager.labels.models import Label
 
 from .models import Task
-from task_manager.labels.models import Label
 
 
 class TaskFilter(django_filters.FilterSet):
@@ -17,11 +17,11 @@ class TaskFilter(django_filters.FilterSet):
         queryset=Label.objects.all(),
     )
 
-    def get_self_tasks(self, queryset, field_name, value):
+    def get_self_tasks(self, queryset, field_name, value):  # noqa: WPS110, WPS615
         if value:
             return queryset.filter(creator=self.request.user)
         return queryset
 
-    class Meta:
+    class Meta:  # noqa: WPS306
         model = Task
         fields = ["status", "executor", "label", "self_tasks"]
