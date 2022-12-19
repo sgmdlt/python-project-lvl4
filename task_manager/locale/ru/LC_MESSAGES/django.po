@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-19 19:46+0400\n"
+"POT-Creation-Date: 2022-12-19 20:17+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,8 @@ msgstr "Статус"
 msgid "creator"
 msgstr "Создать"
 
-#: task_manager/tasks/models.py:27 task_manager/templates/tasks/index.html:16
+#: task_manager/tasks/models.py:27 task_manager/templates/tasks/detail.html:22
+#: task_manager/templates/tasks/index.html:16
 msgid "executor"
 msgstr "Исполнитель"
 
@@ -181,6 +182,7 @@ msgstr "Имя"
 
 #: task_manager/templates/labels/index.html:13
 #: task_manager/templates/statuses/index.html:13
+#: task_manager/templates/tasks/detail.html:30
 #: task_manager/templates/tasks/index.html:17
 #: task_manager/templates/users/index.html:14
 msgid "Created at"
@@ -197,6 +199,7 @@ msgstr "Действия"
 #: task_manager/templates/labels/update.html:19
 #: task_manager/templates/statuses/index.html:25
 #: task_manager/templates/statuses/update.html:19
+#: task_manager/templates/tasks/detail.html:45
 #: task_manager/templates/tasks/index.html:34
 #: task_manager/templates/tasks/update.html:19
 #: task_manager/templates/users/index.html:27
@@ -206,6 +209,7 @@ msgstr "Изменить"
 
 #: task_manager/templates/labels/index.html:26
 #: task_manager/templates/statuses/index.html:26
+#: task_manager/templates/tasks/detail.html:47
 #: task_manager/templates/tasks/index.html:35
 #: task_manager/templates/users/index.html:28
 msgid "Delete"
@@ -251,6 +255,22 @@ msgstr "Вы действительно хотите удалить задачу
 msgid "View task"
 msgstr "Просмотр задачи"
 
+#: task_manager/templates/tasks/detail.html:18
+#: task_manager/templates/tasks/index.html:15
+msgid "Author"
+msgstr "Автор"
+
+#: task_manager/templates/tasks/detail.html:26
+#: task_manager/templates/tasks/index.html:14
+msgid "Status"
+msgstr "Статус"
+
+#: task_manager/templates/tasks/detail.html:35
+#, fuzzy
+#| msgid "labels"
+msgid "labels "
+msgstr "Метки"
+
 #: task_manager/templates/tasks/filter.html:12
 msgid "Show"
 msgstr "Показать"
@@ -258,14 +278,6 @@ msgstr "Показать"
 #: task_manager/templates/tasks/index.html:6
 msgid "Create task"
 msgstr "Создать задачу"
-
-#: task_manager/templates/tasks/index.html:14
-msgid "Status"
-msgstr "Статус"
-
-#: task_manager/templates/tasks/index.html:15
-msgid "Author"
-msgstr "Автор"
 
 #: task_manager/templates/tasks/update.html:6
 #, fuzzy
