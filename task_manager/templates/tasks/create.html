@@ -1,5 +1,6 @@
 {% extends "index.html" %} 
 {% load i18n %}
+{% load bootstrap4 %}
 {% block content %}
 <h1 class="display-4 fw-bold mt-4">{% translate "Create Task" %}</h1>
 <div class="row justify-content-center">
@@ -13,7 +14,7 @@
             <div class="col-12 col-md-8 mt-3 mt-mb-0">
                 <form action="{% url 'tasks:create' %}" method="post" name="data[name]">
                     {% csrf_token %}
-                    {{ form }}
+                    {% bootstrap_form form %}
             <button class="btn btn-primary">{% translate "Create" %}</button>
                 </form>
     </div>

@@ -13,7 +13,7 @@
             <div class="col-12 col-md-8 mt-3 mt-mb-0">
                 <form action="{% url 'users:delete' pk=user.id %}" method="post">
                     {% csrf_token %}
-            <button class="btn btn-primary">{% translate "Delete" %}</button>
+            <button class="btn btn-primary">{% translate "Yes, delete" %}</button>
                 </form>
     </div>
 </div>
