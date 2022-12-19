@@ -248,8 +248,8 @@ msgid "You have no rights to change or delete another user."
 msgstr "У вас нет прав на изменение или удаление другого пользователя"
 
 #: task_manager/users/views.py:22
-msgid "User successfully created"
-msgstr "Пользователь успешно создан"
+msgid "User successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:30
 msgid "User successfully updated"
