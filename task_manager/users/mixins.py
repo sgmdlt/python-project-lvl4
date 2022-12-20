@@ -15,6 +15,6 @@ class UserHasPermissionMixin(LoginRequiredMixin, UserPassesTestMixin):
     def handle_no_permission(self):
         messages.error(
             self.request,
-            _("You have no rights to change or delete another user."),
+            _("You have no rights to change or delete another user"),
         )
         return redirect("users:index")
