@@ -18,6 +18,7 @@ ALLOWED_HOSTS = [
     "[::1]",
     ".herokuapp.com",
     "webserver",
+    ".onrender.com",
 ]
 
 
