@@ -17,8 +17,9 @@ test-coverage:
 
 check: test lint
 
+build: install migrate
 
-start: migrate
+start:
 	@$(MANAGE) runserver
 
 make-migration:
