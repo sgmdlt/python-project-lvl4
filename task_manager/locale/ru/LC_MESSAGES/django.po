@@ -54,7 +54,7 @@ msgstr "Статус успешно создан"
 
 #: task_manager/statuses/views.py:33
 msgid "Status successfully updated"
-msgstr "Статус успешно изменён"
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:48
 msgid "Status is used by task"
@@ -62,7 +62,7 @@ msgstr "Статус используется задачей"
 
 #: task_manager/statuses/views.py:53
 msgid "Status successfully deleted"
-msgstr "Статус успешно удалён"
+msgstr "Статус успешно удален"
 
 #: task_manager/tasks/filters.py:13
 msgid "Only own tasks"
@@ -74,7 +74,7 @@ msgstr "Метка"
 
 #: task_manager/tasks/mixins.py:18
 msgid "Task can be deleted only by its author"
-msgstr "Задачу может удалить только её автор"
+msgstr "Задачу может удалить только ее автор"
 
 #: task_manager/tasks/models.py:12
 #, fuzzy
@@ -309,7 +309,7 @@ msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:33
 msgid "User successfully updated"
-msgstr "Пользователь успешно изменён"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:48
 msgid "Cannot delete a user because he is being used"
@@ -317,7 +317,7 @@ msgstr "Невозможно удалить пользователя, потом
 
 #: task_manager/users/views.py:53
 msgid "User successfully deleted"
-msgstr "Пользователь успешно удалён"
+msgstr "Пользователь успешно удален"
 
 #: task_manager/views.py:16
 msgid "You are logged in"
